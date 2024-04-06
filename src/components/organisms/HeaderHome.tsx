@@ -6,6 +6,8 @@ import { MdOutlineArrowForwardIos } from "react-icons/md";
 import { MdOutlineArrowBackIos } from "react-icons/md";
 import { useStore } from "../../store";
 import { FaSun } from "react-icons/fa";
+import { useLocation } from "react-router-dom";
+import { itemsDashboard } from "../../utils/dataSidebar";
 
 interface HeaderHomeProps {
   setOpen: (open: boolean) => void;
@@ -14,6 +16,7 @@ interface HeaderHomeProps {
 
 const HeaderHome = ({ setOpen, open }: HeaderHomeProps) => {
   const sidebarOpen = localStorage.getItem("sidebarOpen");
+  const location = useLocation();
   const { setTheme, theme } = useStore((state) => state);
   return (
     <header className="h-28 flex justify-between w-full">
@@ -31,7 +34,14 @@ const HeaderHome = ({ setOpen, open }: HeaderHomeProps) => {
           )}
         </button>
         <h1 className="text-2xl">
-          Welcome <span className="font-bold">{user.first_name}</span>
+          {location.pathname !== "/dashboard" ? (
+            itemsDashboard.find((item) => item.path === location.pathname)
+              ?.label
+          ) : (
+            <>
+              Bienvenido <span className="font-bold">{user.first_name}</span>
+            </>
+          )}
         </h1>
       </div>
       <div className="flex gap-6 items-center">
@@ -40,6 +50,7 @@ const HeaderHome = ({ setOpen, open }: HeaderHomeProps) => {
         </button>
         <button
           onClick={() => {
+            localStorage.setItem("theme", theme === "light" ? "dark" : "light");
             setTheme(theme === "light" ? "dark" : "light");
           }}
         >

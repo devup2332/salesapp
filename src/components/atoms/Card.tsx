@@ -6,13 +6,14 @@ interface CardProps {
   className?: string;
 }
 
-const CustomCard = ({ children, ...props }: CardProps) => {
+const CustomCard = ({ children, className, ...props }: CardProps) => {
   return (
     <div
       className={twMerge(
-        "rounded-md p-7 border-solid border-1 bg-secondary-background border-primary-color/30",
-        props.className
+        "rounded-2xl p-7 bg-secondary-background border-primary-color/30",
+        className,
       )}
+      {...props}
     >
       {children}
     </div>

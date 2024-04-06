@@ -9,8 +9,8 @@
 :root {
   /* Light Theme */
   --light-primary-color: #3c79a5;
-  --light-background: #fcfdff;
-  --light-secondary-background: #ffffff;
+  --light-background: #FFFFFF;
+  --light-secondary-background: #FBFBFB;
   --light-foreground-color: #000000;
 
   /* Dark Theme */
@@ -39,19 +39,19 @@
 }
 
 ::-webkit-scrollbar {
-  height: 12px;
-  width: 10px;
-  background: #ffffff;
+  /* height: 12px; */
+  /* width: 10px; */
+  /* background: #ffffff; */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #dadada;
-  -webkit-border-radius: 1ex;
-  -webkit-box-shadow: 0px 1px 2px rgba(235, 235, 235, 0.75);
+  /* background: #dadada; */
+  /* -webkit-border-radius: 1ex; */
+  /* -webkit-box-shadow: 0px 1px 2px rgba(235, 235, 235, 0.75); */
 }
 
 ::-webkit-scrollbar-corner {
-  background: #dadada;
+  /* background: #dadada; */
 }
 
 @tailwind base;

@@ -17,7 +17,7 @@ const dataFormatter = (number: number) =>
 const DashboardPage = () => {
   return (
     <MainLayout>
-      <div className="grid  h-[calc(100%-9rem)] max-h-[900px] grid-cols-10 gap-10 grid-rows-2">
+      <div className="grid h-[calc(100%-9rem)] max-h-[900px] grid-cols-10 gap-10 grid-rows-2">
         <CustomCard className="grid col-start-1 col-end-3">
           <Avatar src={user.image} className="w-32 h-32 justify-self-center" />
           <div className="grid gap-1 h-fit justify-self-center">
@@ -35,8 +35,10 @@ const DashboardPage = () => {
             </div>
           </div>
           <div className="self-end">
-            <h2 className="text-3xl mb-3 text-center">{user.first_name}</h2>
-            <h3 className="text-black/30 text-center">{user.type}</h3>
+            <h2 className="text-3xl mb-3 text-center text-foreground">
+              {user.first_name}
+            </h2>
+            <h3 className="text-center text-foreground/30">{user.type}</h3>
           </div>
         </CustomCard>
         <div className="grid grid-cols-2 col-start-3 col-end-7 gap-10">
@@ -94,9 +96,9 @@ const DashboardPage = () => {
                 <Avatar src={user.userImage} className="w-14 h-14" />
                 <div className="col-start-2 col-end-4">
                   <h2 className="">{user.userName}</h2>
-                  <h2 className="text-foreground-color text-xs">{user.date}</h2>
                 </div>
-                <p className="col-start-5 col-end-7 justify-self-end text-green-500">
+                <h2 className="text-foreground text-sm col-start-4 col-end-6">{user.date}</h2>
+                <p className="col-start-6 col-end-7 justify-self-end text-green-500">
                   S/. {user.cost}
                 </p>
               </div>

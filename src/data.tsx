@@ -11,7 +11,7 @@ export const user = {
 
 export const chartdata = [
   {
-    date: "Jan 22",
+    date: "Jan 01",
     SemiAnalysis: 2890,
     "The Pragmatic Engineer": 2338,
   },

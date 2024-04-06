@@ -69,6 +69,36 @@ export default {
             inverted: colors.white,
           },
         },
+        // dark mode
+        "dark-tremor": {
+          brand: {
+            faint: "#0B1229",
+            muted: colors.blue[950],
+            subtle: colors.blue[800],
+            DEFAULT: colors.blue[500],
+            emphasis: colors.blue[400],
+            inverted: colors.blue[950],
+          },
+          background: {
+            muted: "#131A2B",
+            subtle: colors.gray[800],
+            DEFAULT: colors.gray[900],
+            emphasis: colors.gray[300],
+          },
+          border: {
+            DEFAULT: colors.gray[800],
+          },
+          ring: {
+            DEFAULT: colors.gray[800],
+          },
+          content: {
+            subtle: colors.gray[600],
+            DEFAULT: colors.gray[500],
+            emphasis: colors.gray[200],
+            strong: colors.gray[50],
+            inverted: colors.gray[950],
+          },
+        },
         "main-background": "var(--primary-background)",
         "secondary-background": "var(--secondary-background)",
         "foreground-color": "var(--foreground-color)",
@@ -105,7 +135,54 @@ export default {
         /^(fill-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
     },
   ],
-  plugins: [p1, nextui()],
+  plugins: [
+    p1,
+    nextui({
+      themes: {
+        light: {
+          extend: "light",
+          colors: {
+            background: "#ffffff",
+            foreground: "#000000",
+            success: {
+              100: "#FBFEEE",
+              200: "#F6FEDD",
+              300: "#EFFCCB",
+              400: "#E8FABD",
+              500: "#ffffff",
+              600: "#B3D57A",
+              700: "#1E4776",
+              800: "#13325F",
+              900: "#0B234F",
+              DEFAULT: "#71da25",
+              foreground: "#ffffff",
+            },
+            warning: {
+              DEFAULT: "#F5A524",
+              foreground: "#ffffff",
+            },
+            danger: {
+              DEFAULT: "#F31260",
+              foreground: "#ffffff",
+            },
+            primary: {
+              100: "#DAF4FA",
+              200: "#B7E6F6",
+              300: "#8CC9E3",
+              400: "#69A6C9",
+              500: "#3C79A5",
+              600: "#2B5F8D",
+              700: "#1E4776",
+              800: "#13325F",
+              900: "#0B234F",
+              DEFAULT: "#3C79A5",
+              foreground: "#ffffff",
+            },
+          },
+        },
+      },
+    }),
+  ],
 
   darkMode: "class",
 };
