@@ -16,7 +16,7 @@ import {
   TableHeader,
   TableRow,
 } from "@nextui-org/react";
-import { dataTableSales } from "../../utils/dataTable";
+import { IDataTableSales, dataTableSales } from "../../utils/dataTable";
 import { useStore } from "../../store";
 import { useEffect, useState } from "react";
 
@@ -66,7 +66,7 @@ enum colorsBadgeOptions {
 
 const SalesPage = () => {
   const [page, setPage] = useState(1);
-  const [items, setItems] = useState<object[]>([]);
+  const [items, setItems] = useState<IDataTableSales[]>([]);
   const theme = useStore((state) => state.theme);
   const rowsPerPage = 10;
   const pages = Math.ceil(dataTableSales.length / rowsPerPage);
@@ -75,7 +75,8 @@ const SalesPage = () => {
     const start = (page - 1) * rowsPerPage;
     const end = start + rowsPerPage;
     setItems(dataTableSales.slice(start, end));
-  }, [page, dataTableSales]);
+  }, [page]);
+
   return (
     <MainLayout>
       <div className="grid gap-5 w-full">
@@ -115,7 +116,7 @@ const SalesPage = () => {
             <TableColumn>Acciones</TableColumn>
           </TableHeader>
           <TableBody>
-            {(items as object[]).map((item, index) => {
+            {items.map((item, index) => {
               return (
                 <TableRow key={item.id}>
                   <TableCell>{index + 1}</TableCell>

@@ -1,4 +1,4 @@
-interface IDataTableSales {
+export interface IDataTableSales {
   state: "pending" | "success" | "cancelled";
   id: string;
   author: string;
