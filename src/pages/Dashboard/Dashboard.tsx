@@ -11,7 +11,7 @@ import { barchartdata, chartdata, user, usersSales } from "../../data";
 import { AreaChart, BarChart } from "@tremor/react";
 import MainLayout from "../../layouts/MainLayout";
 
-	const dataFormatter = (number: number) =>
+const dataFormatter = (number: number) =>
 	`$${Intl.NumberFormat("us").format(number).toString()}`;
 
 const DashboardPage = () => {
