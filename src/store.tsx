@@ -7,8 +7,8 @@ type State = {
 type Action = {
   setTheme: (theme: string) => void;
 };
-window.matchMedia('(prefers-color-scheme: dark)')
+window.matchMedia("(prefers-color-scheme: dark)");
 export const useStore = create<State & Action>((set) => ({
-  theme: "light",
-  setTheme: (theme: string) => set(() => ({ theme })),
+	theme: "light",
+	setTheme: (theme: string) => set(() => ({ theme })),
 }));
